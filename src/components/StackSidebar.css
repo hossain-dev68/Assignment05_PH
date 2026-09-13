@@ -1,0 +1,63 @@
+.section-heading h2,
+.stack-header h2 {
+  font-size: 30px;
+  letter-spacing: -0.03em;
+}
+
+/* Stack */
+.stack-sidebar {
+  position: sticky;
+  top: 96px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  padding: 20px;
+  min-height: 320px;
+  box-shadow: 0 10px 35px rgba(31, 26, 62, 0.05);
+}
+
+.stack-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.stack-header h2 {
+  font-size: 24px;
+}
+
+.stack-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.stack-item {
+  display: grid;
+  grid-template-columns: 38px 1fr 25px;
+  gap: 10px;
+  align-items: center;
+  padding: 9px;
+  border: 1px solid #efedf4;
+  border-radius: 11px;
+}
+
+.stack-item > img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.stack-item-info {
+  display: grid;
+  gap: 3px;
+}
+
+.stack-item-info strong {
+  font-size: 11px;
+}
+
+.stack-item-info span {
+  color: #96929f;
+  font-size: 9px;
+}
