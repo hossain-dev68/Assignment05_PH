@@ -21,37 +21,56 @@ function App() {
         if (!response.ok) {
           throw new Error("Could not load technology data");
         }
+
         return response.json() as Promise<Technology[]>;
       })
-      .then((data) => setTechnologies(data))
+      .then((data) => {
+        setTechnologies(data);
+      })
       .catch((error: unknown) => {
         console.error(error);
         toast.error("Technology data could not be loaded.");
       })
-      .finally(() => setLoading(false));
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
   const addToStack = (technology: Technology): void => {
-    const alreadyAdded = stack.some((item) => item.id === technology.id);
+    const alreadyAdded = stack.some(
+      (item) => item.id === technology.id
+    );
 
     if (alreadyAdded) {
-      toast.warning(`${technology.name} is already in your stack.`);
+      toast.warning(
+        `${technology.name} is already in your stack.`
+      );
       return;
     }
 
-    setStack((currentStack) => [...currentStack, technology]);
-    toast.success(`${technology.name} added to your stack.`);
+    setStack((currentStack) => [
+      ...currentStack,
+      technology,
+    ]);
+
+    toast.success(
+      `${technology.name} added to your stack.`
+    );
   };
 
   const removeFromStack = (id: string): void => {
-    const removedItem = stack.find((item) => item.id === id);
+    const removedItem = stack.find(
+      (item) => item.id === id
+    );
 
     setStack((currentStack) =>
       currentStack.filter((item) => item.id !== id)
     );
 
     if (removedItem) {
-      toast.info(`${removedItem.name} removed from your stack.`);
+      toast.info(
+        `${removedItem.name} removed from your stack.`
+      );
     }
   };
 
@@ -67,24 +86,36 @@ function App() {
 
   return (
     <div className="app">
-      <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Navbar
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+      />
 
       <main>
         <Hero />
 
-        <section className="technology-section" id="technologies">
+        <section
+          className="technology-section"
+          id="technologies"
+        >
           <div className="container">
             <div className="section-heading">
               <div>
                 <p className="eyebrow">Explore</p>
+
                 <h2>
-                  Explore <span className="gradient-text">Technologies</span>
+                  Explore{" "}
+                  <span className="gradient-text">
+                    Technologies
+                  </span>
                 </h2>
+
                 <p className="section-description">
-                  Choose the tools you need and build a development stack that
-                  fits your project.
+                  Choose the tools you need and build a
+                  development stack that fits your project.
                 </p>
               </div>
+
               <span className="technology-count">
                 {technologies.length} Technologies
               </span>
@@ -102,7 +133,9 @@ function App() {
                     <TechnologyCard
                       key={technology.id}
                       technology={technology}
-                      isAdded={stack.some((item) => item.id === technology.id)}
+                      isAdded={stack.some(
+                        (item) => item.id === technology.id
+                      )}
                       onAdd={addToStack}
                     />
                   ))}
