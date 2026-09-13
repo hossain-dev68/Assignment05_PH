@@ -11,6 +11,18 @@
   gap: 70px;
   padding-bottom: 45px;
 }
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  margin-bottom: 18px;
+}
+
+.footer-logo-image {
+  width: 135px;
+  height: auto;
+  display: block;
+}
 
 .footer-brand .brand {
   margin-bottom: 15px;

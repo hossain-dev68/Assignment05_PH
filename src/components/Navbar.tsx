@@ -26,7 +26,7 @@ function Navbar({ menuOpen, setMenuOpen }: NavbarProps) {
         {/* Logo */}
         <a href="#" className="brand" onClick={closeMenu}>
           <img
-            src="/images/dev-stack-logo.png"
+            src="/images/logo-text.png"
             alt="Dev Stack"
             className="brand-logo"
           />
