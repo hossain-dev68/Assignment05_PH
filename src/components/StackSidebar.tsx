@@ -17,8 +17,11 @@ function StackSidebar({
       <div className="stack-header">
         <div>
           <p className="eyebrow">MY COLLECTION</p>
-          <h2>Your <span className="gradient-text">Stack</span></h2>
+          <h2>
+            Your <span className="gradient-text">Stack</span>
+          </h2>
         </div>
+
         <span className="selected-count">{stack.length}</span>
       </div>
 
@@ -29,7 +32,9 @@ function StackSidebar({
       {stack.length === 0 ? (
         <div className="empty-stack">
           <div className="empty-icon">+</div>
+
           <h3>Your stack is empty</h3>
+
           <p>
             Add technologies from the list to create your personalized stack.
           </p>
@@ -40,10 +45,12 @@ function StackSidebar({
             {stack.map((item) => (
               <div className="stack-item" key={item.id}>
                 <img src={item.icon} alt="" />
+
                 <div className="stack-item-info">
                   <strong>{item.name}</strong>
                   <span>{item.category}</span>
                 </div>
+
                 <button
                   className="remove-btn"
                   aria-label={`Remove ${item.name}`}
@@ -55,7 +62,10 @@ function StackSidebar({
             ))}
           </div>
 
-          <button className="remove-all-btn" onClick={onRemoveAll}>
+          <button
+            className="remove-all-btn"
+            onClick={onRemoveAll}
+          >
             Remove All
           </button>
         </>
