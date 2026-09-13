@@ -1,3 +1,5 @@
+/* Technology Card */
+
 .technology-card {
   display: flex;
   flex-direction: column;
@@ -10,9 +12,11 @@
 
 .technology-card:hover {
   transform: translateY(-3px);
-  border-color: #cfcaff;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border-color: #d9d9e5;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
 }
+
+/* Top section */
 
 .card-top {
   display: flex;
@@ -27,7 +31,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f5f4ff;
+  background: #f7f8fb;
   border-radius: 12px;
 }
 
@@ -40,25 +44,30 @@
 .badge {
   padding: 5px 10px;
   border-radius: 20px;
-  background: #f0efff;
-  color: #6258e8;
+  background: #f0f8ff;
+  color: #3b82c4;
   font-size: 11px;
   font-weight: 600;
 }
 
+/* Card content */
+
 .technology-card h3 {
   margin: 0 0 8px;
   font-size: 20px;
-  color: #222;
+  font-weight: 600;
+  color: #172033;
 }
 
 .card-description {
   margin: 0;
   min-height: 48px;
-  color: #777;
-  font-size: 14px;
+  color: #7b8496;
+  font-size: 13px;
   line-height: 1.6;
 }
+
+/* Category and difficulty */
 
 .card-meta {
   display: flex;
@@ -69,22 +78,24 @@
 
 .category-chip {
   padding: 5px 9px;
-  border-radius: 6px;
-  background: #f5f5f5;
-  color: #555;
-  font-size: 12px;
+  border-radius: 5px;
+  background: #f4f6f8;
+  color: #687386;
+  font-size: 11px;
 }
 
 .difficulty {
-  font-size: 12px;
-  color: #888;
+  font-size: 11px;
+  color: #8a93a3;
 }
+
+/* Bottom section */
 
 .card-bottom {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
   margin-top: auto;
 }
 
@@ -92,30 +103,33 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #555;
-  font-size: 14px;
+  color: #596274;
+  font-size: 12px;
   font-weight: 600;
 }
 
 .star {
   color: #f5b800;
-  font-size: 16px;
+  font-size: 13px;
 }
 
+/* Add button */
+
 .add-btn {
-  padding: 9px 14px;
+  width: 100%;
+  padding: 9px 12px;
   border: none;
-  border-radius: 8px;
-  background: #635bff;
+  border-radius: 6px;
+  background: #0b1020;
   color: #ffffff;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 500;
   cursor: pointer;
   transition: 0.2s ease;
 }
 
 .add-btn:hover {
-  background: #5048d8;
+  background: #171d2d;
 }
 
 .add-btn:disabled {
@@ -123,9 +137,11 @@
 }
 
 .add-btn.added {
-  background: #e9e8ff;
-  color: #635bff;
+  background: #0b1020;
+  color: #ffffff;
 }
+
+/* Mobile */
 
 @media (max-width: 600px) {
   .technology-card {
@@ -133,8 +149,7 @@
   }
 
   .card-bottom {
-    align-items: stretch;
-    flex-direction: column;
+    gap: 10px;
   }
 
   .add-btn {
