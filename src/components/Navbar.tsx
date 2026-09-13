@@ -1,4 +1,5 @@
 import "./Navbar.css";
+
 interface NavbarProps {
   menuOpen: boolean;
   setMenuOpen: (open: boolean) => void;
@@ -10,6 +11,8 @@ function Navbar({ menuOpen, setMenuOpen }: NavbarProps) {
   return (
     <header className="navbar">
       <div className="container nav-inner">
+
+        {/* Mobile Hamburger */}
         <button
           className="hamburger"
           aria-label="Open menu"
@@ -20,23 +23,49 @@ function Navbar({ menuOpen, setMenuOpen }: NavbarProps) {
           <span></span>
         </button>
 
+        {/* Logo */}
         <a href="#" className="brand" onClick={closeMenu}>
-          <span className="brand-mark">&lt;/&gt;</span>
-          <span className="brand-name">Dev Stack</span>
+          <img
+            src="/images/dev-stack-logo.png"
+            alt="Dev Stack"
+            className="brand-logo"
+          />
         </a>
 
+        {/* Navigation */}
         <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
-          <a href="#" onClick={closeMenu}>Home</a>
-          <a href="#technologies" onClick={closeMenu}>Technologies</a>
-          <a href="#projects" onClick={closeMenu}>Projects</a>
-          <a href="#about" onClick={closeMenu}>About</a>
-          <a href="#contact" onClick={closeMenu}>Contact</a>
+          <a href="#" onClick={closeMenu}>
+            Home
+          </a>
+
+          <a href="#technologies" onClick={closeMenu}>
+            Technologies
+          </a>
+
+          <a href="#projects" onClick={closeMenu}>
+            Projects
+          </a>
+
+          <a href="#about" onClick={closeMenu}>
+            About
+          </a>
+
+          <a href="#contact" onClick={closeMenu}>
+            Contact
+          </a>
         </nav>
 
+        {/* Sign In / Sign Up */}
         <div className="nav-actions">
-          <button className="sign-in">Sign In</button>
-          <button className="sign-up">Sign Up</button>
+          <button className="sign-in">
+            Sign In
+          </button>
+
+          <button className="sign-up">
+            Sign Up
+          </button>
         </div>
+
       </div>
     </header>
   );
