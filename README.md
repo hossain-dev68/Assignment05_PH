@@ -55,34 +55,8 @@ npm install
 npm run dev
 ```
 
-Then open the local Vite URL shown in the terminal.
 
-## Suggested Git Commit History
 
-Use meaningful commits instead of one large commit:
 
-```bash
-git add .
-git commit -m "chore: initialize Vite React project"
 
-git add .
-git commit -m "feat: add responsive navbar and hero"
 
-git add .
-git commit -m "feat: add technology JSON data"
-
-git add .
-git commit -m "feat: render responsive technology cards"
-
-git add .
-git commit -m "feat: implement stack add and remove"
-
-git add .
-git commit -m "feat: add toast notifications"
-
-git add .
-git commit -m "feat: add loading state and responsive styling"
-
-git add .
-git commit -m "docs: add project README"
-```
